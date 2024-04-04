@@ -1,0 +1,6433 @@
+<?xml version="1.0"?>
+<EtherCATConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATConfig.xsd" Version="1.3">
+	<Config>
+		<Master>
+			<Info>
+				<Name><![CDATA[Device 1 (EtherCAT)]]></Name>
+				<Destination>010105010000</Destination>
+				<Source>5405db49697f</Source>
+				<EtherType>a488</EtherType>
+			</Info>
+			<MailboxStates>
+				<StartAddr>150994944</StartAddr>
+				<Count>2</Count>
+			</MailboxStates>
+			<InitCmds>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[read slave count]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>7</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>0</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[read slave count]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>7</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>0</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[enable ECAT IRQ]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>512</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear configured addresses]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>16</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear crc register]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>768</Ado>
+					<Data>0000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear fmmu]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>1536</Ado>
+					<DataLength>256</DataLength>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear sm]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>2048</Ado>
+					<DataLength>256</DataLength>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear dc system time]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>2320</Ado>
+					<DataLength>32</DataLength>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[clear dc cycle cfg]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>2433</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[reset dc speed]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>2352</Ado>
+					<Data>0010</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[configure dc filter]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>2356</Ado>
+					<Data>000c</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<BeforeSlave>true</BeforeSlave>
+					<Comment><![CDATA[en/disable second physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>8</Cmd>
+					<Adp>0</Adp>
+					<Ado>259</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+			</InitCmds>
+		</Master>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main]]></Name>
+				<PhysAddr>1001</PhysAddr>
+				<AutoIncAddr>0</AutoIncAddr>
+				<Physics>YKY</Physics>
+				<VendorId>2</VendorId>
+				<ProductCode>72100946</ProductCode>
+				<RevisionNo>1179648</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EK1100-0000-0018</ProductRevision>
+			</Info>
+			<ProcessData/>
+			<InitCmds>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Retries>3</Retries>
+					<Timeout>5000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[assign EEPROM to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>1282</Ado>
+					<Data>000108000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>0</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>02000000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>1282</Ado>
+					<Data>00010a000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>0</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>522c4c04</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>16</Ado>
+					<Data>e903</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Retries>300</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[assign EEPROM to PDI]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>1280</Ado>
+					<Data>01</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>II</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Cnt>1</Cnt>
+					<Retries>300</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>0</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0300</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>030000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>200</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set device state to OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1001</Adp>
+					<Ado>288</Ado>
+					<Data>0800</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[check device state for OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1001</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>080000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+			</InitCmds>
+		</Slave>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main_EL1004_01]]></Name>
+				<PhysAddr>1002</PhysAddr>
+				<AutoIncAddr>65535</AutoIncAddr>
+				<Physics>KK</Physics>
+				<VendorId>2</VendorId>
+				<ProductCode>65810514</ProductCode>
+				<RevisionNo>1245184</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EL1004-0000-0019</ProductRevision>
+			</Info>
+			<ProcessData>
+				<Recv>
+					<BitStart>672</BitStart>
+					<BitLength>4</BitLength>
+				</Recv>
+				<Sm0>
+					<Type>Inputs</Type>
+					<DefaultSize>1</DefaultSize>
+					<StartAddress>4096</StartAddress>
+					<ControlByte>0</ControlByte>
+					<Enable>1</Enable>
+					<Pdo>6656</Pdo>
+					<Pdo>6657</Pdo>
+					<Pdo>6658</Pdo>
+					<Pdo>6659</Pdo>
+				</Sm0>
+				<TxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1a00</Index>
+					<Name>Channel 1</Name>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Input</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1a01</Index>
+					<Name>Channel 2</Name>
+					<Entry>
+						<Index>#x6010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Input</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1a02</Index>
+					<Name>Channel 3</Name>
+					<Entry>
+						<Index>#x6020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Input</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1a03</Index>
+					<Name>Channel 4</Name>
+					<Entry>
+						<Index>#x6030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Input</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</TxPdo>
+			</ProcessData>
+			<InitCmds>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Retries>3</Retries>
+					<Timeout>5000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[assign EEPROM to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1282</Ado>
+					<Data>000108000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>02000000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1282</Ado>
+					<Data>00010a000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>5230ec03</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1282</Ado>
+					<Data>00010c000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1288</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>16</Ado>
+					<Data>ea03</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Retries>300</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sms]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>2056</Ado>
+					<Data>0000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set sm 0 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>2048</Ado>
+					<Data>0010010000000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 0 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>1536</Ado>
+					<Data>10100001010000030010000101000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 0]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>1536</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[assign EEPROM to PDI]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>1280</Ado>
+					<Data>01</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>II</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Cnt>1</Cnt>
+					<Retries>300</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65535</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0300</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>030000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>200</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set device state to OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1002</Adp>
+					<Ado>288</Ado>
+					<Data>0800</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[check device state for OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1002</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>080000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+			</InitCmds>
+			<PreviousPort Selected="true">
+				<Port>B</Port>
+				<PhysAddr>1001</PhysAddr>
+			</PreviousPort>
+		</Slave>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main_EL2004_01]]></Name>
+				<PhysAddr>1003</PhysAddr>
+				<AutoIncAddr>65534</AutoIncAddr>
+				<Physics>KK</Physics>
+				<VendorId>2</VendorId>
+				<ProductCode>131346514</ProductCode>
+				<RevisionNo>1179648</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EL2004-0000-0018</ProductRevision>
+			</Info>
+			<ProcessData>
+				<Send>
+					<BitStart>440</BitStart>
+					<BitLength>4</BitLength>
+				</Send>
+				<Sm0>
+					<Type>Outputs</Type>
+					<StartAddress>3840</StartAddress>
+					<ControlByte>68</ControlByte>
+					<Enable>1</Enable>
+					<Pdo>5632</Pdo>
+					<Pdo>5633</Pdo>
+					<Pdo>5634</Pdo>
+					<Pdo>5635</Pdo>
+				</Sm0>
+				<RxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1600</Index>
+					<Name>Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1601</Index>
+					<Name>Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1602</Index>
+					<Name>Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true" Mandatory="true" Sm="0">
+					<Index>#x1603</Index>
+					<Name>Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</RxPdo>
+			</ProcessData>
+			<InitCmds>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Retries>3</Retries>
+					<Timeout>5000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65534</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65534</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>288</Ado>
+					<Data>0100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65534</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[assign EEPROM to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1282</Ado>
+					<Data>000108000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>02000000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1282</Ado>
+					<Data>00010a000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>5230d407</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>16</Ado>
+					<Data>eb03</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Retries>300</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sms]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>2056</Ado>
+					<Data>0000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[clear output sm]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>2048</Ado>
+					<Data>0000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set sm 0 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>2048</Ado>
+					<Data>000f010044000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 0 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>1536</Ado>
+					<Data>0008000101000003000f000201000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 0]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>1536</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[assign EEPROM to PDI]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>1280</Ado>
+					<Data>01</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>II</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0200</Data>
+					<Cnt>1</Cnt>
+					<Retries>300</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65534</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0300</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>030000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>200</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set device state to OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1003</Adp>
+					<Ado>288</Ado>
+					<Data>0800</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[check device state for OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1003</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>080000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+			</InitCmds>
+			<PreviousPort Selected="true">
+				<Port>B</Port>
+				<PhysAddr>1002</PhysAddr>
+			</PreviousPort>
+		</Slave>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main_EL6090_01]]></Name>
+				<PhysAddr>1004</PhysAddr>
+				<AutoIncAddr>65533</AutoIncAddr>
+				<Physics>KK</Physics>
+				<VendorId>2</VendorId>
+				<ProductCode>399126610</ProductCode>
+				<RevisionNo>1114112</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EL6090-0000-0017</ProductRevision>
+			</Info>
+			<ProcessData>
+				<Send>
+					<BitStart>312</BitStart>
+					<BitLength>32</BitLength>
+				</Send>
+				<Recv>
+					<BitStart>312</BitStart>
+					<BitLength>16</BitLength>
+				</Recv>
+				<Sm2>
+					<Type>Outputs</Type>
+					<DefaultSize>12</DefaultSize>
+					<StartAddress>4352</StartAddress>
+					<ControlByte>36</ControlByte>
+					<Enable>1</Enable>
+					<Pdo>5632</Pdo>
+				</Sm2>
+				<Sm3>
+					<Type>Inputs</Type>
+					<DefaultSize>48</DefaultSize>
+					<StartAddress>4480</StartAddress>
+					<ControlByte>32</ControlByte>
+					<Enable>1</Enable>
+					<Pdo>6656</Pdo>
+				</Sm3>
+				<TxPdo Fixed="true" Sm="3">
+					<Index>#x1a00</Index>
+					<Name>DIS Inputs</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>2</BitLen>
+						<Name>Status__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Up</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Down</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Left</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Right</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Enter</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>8</BitLen>
+						<Name>Status__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__TxPDO Toggle</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a01</Index>
+					<Name>UCP Input Channel 1</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#x6010</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6010</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Timer</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6010</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Counter</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a02</Index>
+					<Name>UCP Input Channel 2</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#x6020</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6020</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Timer</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6020</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Counter</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a03</Index>
+					<Name>UCP Input Channel 3</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#x6030</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6030</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Timer</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6030</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Counter</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a04</Index>
+					<Name>UCP Input Channel 4</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#x6040</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6040</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Timer</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6040</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Counter</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a05</Index>
+					<Name>UCP Inputs operating time</Name>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#xf600</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#xf600</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Operating time</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<RxPdo Fixed="true" Sm="2">
+					<Index>#x1600</Index>
+					<Name>DIS Outputs</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Value row 1</Name>
+						<DataType>INT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Value row 2</Name>
+						<DataType>INT</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true">
+					<Index>#x1601</Index>
+					<Name>UCP Outputs Channel 1</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer start</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>5</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter clk</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>7</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true">
+					<Index>#x1602</Index>
+					<Name>UCP Outputs Channel 2</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer start</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>5</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter clk</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>7</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true">
+					<Index>#x1603</Index>
+					<Name>UCP Outputs Channel 3</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer start</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>5</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter clk</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>7</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="true">
+					<Index>#x1604</Index>
+					<Name>UCP Outputs Channel 4</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer start</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Timer reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>5</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter clk</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Ctrl__Counter reset</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>7</BitLen>
+						<Name>Ctrl__</Name>
+					</Entry>
+				</RxPdo>
+			</ProcessData>
+			<Mailbox DataLinkLayer="true">
+				<Send>
+					<Start>4096</Start>
+					<Length>128</Length>
+				</Send>
+				<Recv>
+					<Start>4224</Start>
+					<Length>128</Length>
+					<StatusBitAddr>0</StatusBitAddr>
+				</Recv>
+				<BootStrap>
+					<Send>
+						<Start>4096</Start>
+						<Length>244</Length>
+					</Send>
+					<Recv>
+						<Start>4340</Start>
+						<Length>244</Length>
+					</Recv>
+				</BootStrap>
+				<Protocol>CoE</Protocol>
+				<Protocol>FoE</Protocol>
+				<CoE>
+					<InitCmds>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[clear sm pdos (0x1C12)]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7186</Index>
+							<SubIndex>0</SubIndex>
+							<Data>00</Data>
+						</InitCmd>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[clear sm pdos (0x1C13)]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7187</Index>
+							<SubIndex>0</SubIndex>
+							<Data>00</Data>
+						</InitCmd>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C12:01 index]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7186</Index>
+							<SubIndex>1</SubIndex>
+							<Data>0016</Data>
+						</InitCmd>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C12 count]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7186</Index>
+							<SubIndex>0</SubIndex>
+							<Data>01</Data>
+						</InitCmd>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C13:01 index]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7187</Index>
+							<SubIndex>1</SubIndex>
+							<Data>001a</Data>
+						</InitCmd>
+						<InitCmd Fixed="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C13 count]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7187</Index>
+							<SubIndex>0</SubIndex>
+							<Data>01</Data>
+						</InitCmd>
+					</InitCmds>
+					<Profile>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>601</AddInfo>
+						</ChannelInfo>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>151</AddInfo>
+						</ChannelInfo>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>151</AddInfo>
+						</ChannelInfo>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>151</AddInfo>
+						</ChannelInfo>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>151</AddInfo>
+						</ChannelInfo>
+					</Profile>
+				</CoE>
+			</Mailbox>
+			<InitCmds>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>288</Ado>
+					<Data>1100</Data>
+					<Retries>3</Retries>
+					<Timeout>5000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>288</Ado>
+					<Data>1100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[assign EEPROM to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1282</Ado>
+					<Data>000108000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>02000000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1282</Ado>
+					<Data>00010a000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>5230ca17</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1282</Ado>
+					<Data>00010c000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1288</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>16</Ado>
+					<Data>ec03</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sm 0/1 (mailbox out/in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2048</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[clear sm 0/1 (mailbox out/in)]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>2048</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set sm 0 (mailbox out)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2048</Ado>
+					<Data>0010800026000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set sm 1 (mailbox in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2056</Ado>
+					<Data>8010800022000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set sm 0 (bootstrap out)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2048</Ado>
+					<Data>0010f40026000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set sm 1 (bootstrap in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2056</Ado>
+					<Data>f410f40022000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>1200</Data>
+					<Retries>300</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sms]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2064</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set sm 2 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2064</Ado>
+					<Data>0011040024000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set sm 3 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>2072</Ado>
+					<Data>8011020020000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 0 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1536</Ado>
+					<Data>00000001040000070011000201000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 1 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1552</Ado>
+					<Data>00000001020000078011000101000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set fmmu 2 (mailbox state)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1568</Ado>
+					<Data>00000009010000000d08000101000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 0]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1536</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 1]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1552</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 2]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1568</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[assign EEPROM to PDI]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>1280</Ado>
+					<Data>01</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>II</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>1200</Data>
+					<Cnt>1</Cnt>
+					<Retries>300</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65533</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>1300</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>030000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>200</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set device state to OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1004</Adp>
+					<Ado>288</Ado>
+					<Data>0800</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[check device state for OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1004</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>080000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+			</InitCmds>
+			<PreviousPort Selected="true">
+				<Port>B</Port>
+				<PhysAddr>1003</PhysAddr>
+			</PreviousPort>
+		</Slave>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main_EL3751_01]]></Name>
+				<PhysAddr>1005</PhysAddr>
+				<AutoIncAddr>65532</AutoIncAddr>
+				<Physics>KK</Physics>
+				<VendorId>2</VendorId>
+				<ProductCode>245837906</ProductCode>
+				<RevisionNo>1507328</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EL3751-0000-0023</ProductRevision>
+			</Info>
+			<ProcessData>
+				<Recv>
+					<BitStart>544</BitStart>
+					<BitLength>128</BitLength>
+				</Recv>
+				<Sm2>
+					<Type>Outputs</Type>
+					<StartAddress>4224</StartAddress>
+					<ControlByte>36</ControlByte>
+					<Enable>0</Enable>
+				</Sm2>
+				<Sm3>
+					<Type>Inputs</Type>
+					<DefaultSize>16</DefaultSize>
+					<StartAddress>4248</StartAddress>
+					<ControlByte>32</ControlByte>
+					<Enable>1</Enable>
+					<Pdo>6656</Pdo>
+					<Pdo>6657</Pdo>
+					<Pdo>6672</Pdo>
+				</Sm3>
+				<TxPdo Fixed="true" Sm="3">
+					<Index>#x1a00</Index>
+					<Name>PAI Status</Name>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>8</BitLen>
+						<Name>Status__No of Samples</Name>
+						<Comment>number of valid samples in the PDO samples</Comment>
+						<DataType>USINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Error</Name>
+						<Comment>TRUE: general Error</Comment>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Underrange</Name>
+						<Comment>TRUE: measurement Underrange event</Comment>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overrange</Name>
+						<Comment>TRUE: measurement Overrange event</Comment>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>1</BitLen>
+						<Name>Status__</Name>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Diag</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__TxPDO State</Name>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>2</BitLen>
+						<Name>Status__Input cycle counter</Name>
+						<DataType>BIT2</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>16</BitLen>
+						<Name>Status__</Name>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true" Sm="3">
+					<Index>#x1a01</Index>
+					<Name>PAI Samples 1</Name>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a02</Index>
+					<Name>PAI Samples 2</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a03</Index>
+					<Name>PAI Samples 4</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a04</Index>
+					<Name>PAI Samples 5</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a05</Index>
+					<Name>PAI Samples 8</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a06</Index>
+					<Name>PAI Samples 10</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a07</Index>
+					<Name>PAI Samples 16</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a08</Index>
+					<Name>PAI Samples 20</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a09</Index>
+					<Name>PAI Samples 25</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>21</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [20]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>22</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [21]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>23</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [22]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>24</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [23]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>25</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [24]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a0a</Index>
+					<Name>PAI Samples 32</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>21</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [20]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>22</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [21]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>23</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [22]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>24</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [23]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>25</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [24]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>26</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [25]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>27</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [26]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>28</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [27]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>29</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [28]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>30</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [29]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>31</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [30]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [31]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a0b</Index>
+					<Name>PAI Samples 40</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>21</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [20]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>22</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [21]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>23</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [22]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>24</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [23]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>25</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [24]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>26</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [25]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>27</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [26]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>28</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [27]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>29</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [28]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>30</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [29]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>31</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [30]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [31]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>33</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [32]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>34</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [33]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>35</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [34]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>36</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [35]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>37</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [36]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>38</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [37]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>39</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [38]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>40</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [39]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a0c</Index>
+					<Name>PAI Samples 50</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0d</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>21</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [20]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>22</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [21]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>23</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [22]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>24</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [23]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>25</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [24]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>26</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [25]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>27</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [26]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>28</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [27]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>29</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [28]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>30</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [29]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>31</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [30]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [31]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>33</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [32]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>34</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [33]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>35</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [34]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>36</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [35]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>37</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [36]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>38</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [37]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>39</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [38]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>40</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [39]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>41</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [40]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>42</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [41]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>43</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [42]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>44</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [43]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>45</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [44]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>46</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [45]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>47</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [46]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>48</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [47]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>49</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [48]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>50</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [49]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a0d</Index>
+					<Name>PAI Samples 64</Name>
+					<Exclude>#x1a01</Exclude>
+					<Exclude>#x1a02</Exclude>
+					<Exclude>#x1a03</Exclude>
+					<Exclude>#x1a04</Exclude>
+					<Exclude>#x1a05</Exclude>
+					<Exclude>#x1a06</Exclude>
+					<Exclude>#x1a07</Exclude>
+					<Exclude>#x1a08</Exclude>
+					<Exclude>#x1a09</Exclude>
+					<Exclude>#x1a0a</Exclude>
+					<Exclude>#x1a0b</Exclude>
+					<Exclude>#x1a0c</Exclude>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [0]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [1]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>3</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [2]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>4</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [3]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>5</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [4]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>6</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [5]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>7</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [6]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>8</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [7]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>9</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [8]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>10</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [9]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>11</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [10]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>12</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [11]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>13</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [12]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>14</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [13]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>15</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [14]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>16</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [15]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>17</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [16]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>18</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [17]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>19</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [18]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>20</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [19]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>21</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [20]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>22</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [21]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>23</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [22]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>24</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [23]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>25</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [24]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>26</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [25]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>27</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [26]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>28</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [27]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>29</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [28]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>30</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [29]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>31</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [30]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [31]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>33</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [32]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>34</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [33]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>35</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [34]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>36</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [35]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>37</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [36]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>38</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [37]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>39</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [38]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>40</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [39]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>41</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [40]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>42</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [41]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>43</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [42]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>44</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [43]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>45</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [44]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>46</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [45]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>47</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [46]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>48</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [47]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>49</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [48]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>50</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [49]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>51</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [50]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>52</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [51]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>53</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [52]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>54</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [53]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>55</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [54]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>56</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [55]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>57</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [56]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>58</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [57]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>59</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [58]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>60</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [59]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>61</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [60]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>62</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [61]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>63</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [62]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x6001</Index>
+						<SubIndex>64</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Samples__ARRAY [63]</Name>
+						<Comment>Samples</Comment>
+						<DataType>DINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true">
+					<Index>#x1a0e</Index>
+					<Name>PAI Synchronous Oversampling</Name>
+					<Entry>
+						<Index>#x6002</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Synchronous Oversampling__Internal Buffer</Name>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="true" Sm="3">
+					<Index>#x1a10</Index>
+					<Name>PAI Timestamp</Name>
+					<Entry>
+						<Index>#xf600</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>StartTimeNextLatch__Low</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#xf600</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>StartTimeNextLatch__Hi</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</TxPdo>
+				<RxPdo Fixed="true">
+					<Index>#x1600</Index>
+					<Name>PAI Control</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Control__Integrator Reset</Name>
+						<Comment>restart of integration on rising edge</Comment>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Control__Peak Hold Reset</Name>
+						<Comment>starts new peak hold measurement on rising edge</Comment>
+						<DataType>BIT</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>14</BitLen>
+						<Name>Control__</Name>
+					</Entry>
+				</RxPdo>
+			</ProcessData>
+			<Mailbox DataLinkLayer="true">
+				<Send>
+					<Start>4096</Start>
+					<Length>64</Length>
+				</Send>
+				<Recv>
+					<Start>4160</Start>
+					<Length>64</Length>
+					<StatusBitAddr>1</StatusBitAddr>
+				</Recv>
+				<BootStrap>
+					<Send>
+						<Start>4096</Start>
+						<Length>244</Length>
+					</Send>
+					<Recv>
+						<Start>4340</Start>
+						<Length>244</Length>
+					</Recv>
+				</BootStrap>
+				<Protocol>CoE</Protocol>
+				<Protocol>FoE</Protocol>
+				<CoE>
+					<InitCmds>
+						<InitCmd Fixed="true" CompleteAccess="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C12 index]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7186</Index>
+							<SubIndex>0</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd Fixed="true" CompleteAccess="true">
+							<Transition>PS</Transition>
+							<Comment><![CDATA[download pdo 0x1C13 index]]></Comment>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>7187</Index>
+							<SubIndex>0</SubIndex>
+							<Data>0300001a011a101a</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>1</SubIndex>
+							<Data>3700</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>2</SubIndex>
+							<Data>0a00</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>4</SubIndex>
+							<Data>00</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>20</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>22</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>24</SubIndex>
+							<Data>0100</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>25</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>27</SubIndex>
+							<Data>c800</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>28</SubIndex>
+							<Data>00</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>43</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>44</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>45</SubIndex>
+							<Data>0100</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32768</Index>
+							<SubIndex>46</SubIndex>
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32773</Index>
+							<SubIndex>1</SubIndex>
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd>
+							<Transition>PS</Transition>
+							<Timeout>0</Timeout>
+							<Ccs>1</Ccs>
+							<Index>32773</Index>
+							<SubIndex>2</SubIndex>
+							<Data>00000100</Data>
+						</InitCmd>
+					</InitCmds>
+					<Profile>
+						<ChannelInfo>
+							<ProfileNo>5001</ProfileNo>
+							<AddInfo>350</AddInfo>
+						</ChannelInfo>
+					</Profile>
+				</CoE>
+			</Mailbox>
+			<InitCmds>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>288</Ado>
+					<Data>1100</Data>
+					<Retries>3</Retries>
+					<Timeout>5000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>288</Ado>
+					<Data>1100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for INIT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>304</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0100</Data>
+						<DataMask>0f00</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[assign EEPROM to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1282</Ado>
+					<Data>000108000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check vendor id]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>02000000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1282</Ado>
+					<Data>00010a000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check product code]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1288</Ado>
+					<Data>00000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>5230a70e</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1282</Ado>
+					<Data>00010c000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check revision number (lo word)]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>1</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1288</Ado>
+					<Data>0000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>0000</Data>
+						<Timeout>100</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set physical address]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>16</Ado>
+					<Data>ed03</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Transition>PI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sm 0/1 (mailbox out/in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2048</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[clear sm 0/1 (mailbox out/in)]]></Comment>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>2048</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set sm 0 (mailbox out)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2048</Ado>
+					<Data>0010400026000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set sm 1 (mailbox in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2056</Ado>
+					<Data>4010400022000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set sm 0 (bootstrap out)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2048</Ado>
+					<Data>0010f40026000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set sm 1 (bootstrap in)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2056</Ado>
+					<Data>f410f40022000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>1200</Data>
+					<Retries>300</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear sms]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2064</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set sm 2 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2064</Ado>
+					<Data>8010000024000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set sm 3 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>2072</Ado>
+					<Data>9810100020000100</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 0 (outputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1536</Ado>
+					<Data>00000000000000000000000200000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set fmmu 1 (inputs)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1552</Ado>
+					<Data>00100001100000079810000101000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set fmmu 2 (mailbox state)]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1568</Ado>
+					<Data>00000009010001010d08000101000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Retries>3</Retries>
+					<Timeout>200</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 0]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1536</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>SI</Transition>
+					<Transition>OP</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 1]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1552</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PI</Transition>
+					<Transition>BI</Transition>
+					<Transition>SI</Transition>
+					<Transition>OI</Transition>
+					<Comment><![CDATA[clear fmmu 2]]></Comment>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1568</Ado>
+					<Data>00000000000000000000000000000000</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SP</Transition>
+					<Transition>OP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>5000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[assign EEPROM to PDI]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>1280</Ado>
+					<Data>01</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>II</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[set device state to PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>1200</Data>
+					<Cnt>1</Cnt>
+					<Retries>300</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Comment><![CDATA[check device state for PREOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>020000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IP</Transition>
+					<Transition>BI</Transition>
+					<Comment><![CDATA[assign EEPROM back to ECAT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>2</Cmd>
+					<Adp>65532</Adp>
+					<Ado>1280</Ado>
+					<Data>00</Data>
+					<Retries>3</Retries>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[set device state to BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>1300</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>3000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>IB</Transition>
+					<Comment><![CDATA[check device state for BOOT]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>030000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>3000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[set device state to SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>0400</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>PS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>OS</Transition>
+					<Comment><![CDATA[check device state for SAFEOP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>040000000000</Data>
+						<DataMask>0f0000000000</DataMask>
+						<Timeout>200</Timeout>
+					</Validate>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[set device state to OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>5</Cmd>
+					<Adp>1005</Adp>
+					<Ado>288</Ado>
+					<Data>0800</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Timeout>10000</Timeout>
+				</InitCmd>
+				<InitCmd>
+					<Transition>SO</Transition>
+					<Comment><![CDATA[check device state for OP]]></Comment>
+					<Requires>cycle</Requires>
+					<Cmd>4</Cmd>
+					<Adp>1005</Adp>
+					<Ado>304</Ado>
+					<Data>000000000000</Data>
+					<Cnt>1</Cnt>
+					<Retries>3</Retries>
+					<Validate>
+						<Data>080000000000</Data>
+						<DataMask>1f0000000000</DataMask>
+						<Timeout>10000</Timeout>
+					</Validate>
+				</InitCmd>
+			</InitCmds>
+			<PreviousPort Selected="true">
+				<Port>B</Port>
+				<PhysAddr>1004</PhysAddr>
+			</PreviousPort>
+		</Slave>
+		<Slave>
+			<Info>
+				<Name><![CDATA[Main_EL9011_01]]></Name>
+				<VendorId>2</VendorId>
+				<ProductCode>590557264</ProductCode>
+				<RevisionNo>0</RevisionNo>
+				<SerialNo>0</SerialNo>
+				<ProductRevision>EL9011</ProductRevision>
+			</Info>
+			<ProcessData/>
+			<PreviousPort Selected="true">
+				<Port>B</Port>
+				<PhysAddr>1005</PhysAddr>
+			</PreviousPort>
+		</Slave>
+		<Cyclic>
+			<Comment><![CDATA[synchronized with task 'RTTask']]></Comment>
+			<CycleTime>1000</CycleTime>
+			<Priority>1</Priority>
+			<TaskId>2</TaskId>
+			<Frame>
+				<Cmd>
+					<State>PREOP</State>
+					<State>SAFEOP</State>
+					<State>OP</State>
+					<Comment><![CDATA[cyclic cmd]]></Comment>
+					<Cmd>10</Cmd>
+					<Addr>150994944</Addr>
+					<DataLength>1</DataLength>
+					<InputOffs>16</InputOffs>
+					<OutputOffs>16</OutputOffs>
+				</Cmd>
+				<Cmd>
+					<State>SAFEOP</State>
+					<State>OP</State>
+					<Comment><![CDATA[cyclic cmd]]></Comment>
+					<Cmd>12</Cmd>
+					<Addr>16777216</Addr>
+					<DataLength>4</DataLength>
+					<Cnt>3</Cnt>
+					<InputOffs>29</InputOffs>
+					<OutputOffs>29</OutputOffs>
+				</Cmd>
+				<Cmd>
+					<State>SAFEOP</State>
+					<State>OP</State>
+					<Comment><![CDATA[cyclic cmd]]></Comment>
+					<Cmd>11</Cmd>
+					<Addr>16779264</Addr>
+					<DataLength>1</DataLength>
+					<Cnt>1</Cnt>
+					<InputOffs>45</InputOffs>
+					<OutputOffs>45</OutputOffs>
+				</Cmd>
+				<Cmd>
+					<State>SAFEOP</State>
+					<State>OP</State>
+					<Comment><![CDATA[cyclic cmd]]></Comment>
+					<Cmd>10</Cmd>
+					<Addr>16781312</Addr>
+					<DataLength>17</DataLength>
+					<Cnt>2</Cnt>
+					<InputOffs>58</InputOffs>
+					<OutputOffs>58</OutputOffs>
+				</Cmd>
+				<Cmd>
+					<State>PREOP</State>
+					<State>SAFEOP</State>
+					<State>OP</State>
+					<Comment><![CDATA[cyclic cmd]]></Comment>
+					<Cmd>7</Cmd>
+					<Adp>0</Adp>
+					<Ado>304</Ado>
+					<DataLength>2</DataLength>
+					<Cnt>5</Cnt>
+					<InputOffs>87</InputOffs>
+					<OutputOffs>87</OutputOffs>
+				</Cmd>
+			</Frame>
+		</Cyclic>
+		<ProcessImage>
+			<Inputs>
+				<ByteSize>1536</ByteSize>
+				<Variable>
+					<Name>Main_EL6090_01.DIS Inputs.Status</Name>
+					<DataType>Status_C003356D</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>312</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.PAI Status.Status</Name>
+					<DataType>Status_8090C84C</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>544</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.PAI Samples 1.Samples</Name>
+					<DataType>Samples_56907543</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>576</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.PAI Timestamp.StartTimeNextLatch</Name>
+					<DataType>StartTimeNextLatch_7FE47558</DataType>
+					<BitSize>64</BitSize>
+					<BitOffs>608</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.Channel 1.Input</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>672</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.Channel 2.Input</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>673</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.Channel 3.Input</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>674</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.Channel 4.Input</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>675</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Inputs.Frm0State</Name>
+					<Comment><![CDATA[0x0001 = 1. EtherCAT command not sent (NOP requested)
+0x0002 = 2. EtherCAT command not sent (NOP requested)
+0x0004 = 3. EtherCAT command not sent (NOP requested)
+...
+0x4000 = 15. EtherCAT command not sent (NOP requested)
+0x8000 = complete frame not sent
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12160</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Inputs.Frm0WcState</Name>
+					<Comment><![CDATA[0x0001 = wrong working counter of 1. EtherCAT command received
+0x0002 = wrong working counter of 2. EtherCAT command received
+0x0004 = wrong working counter of 3. EtherCAT command received
+...
+0x4000 = wrong working counter of 15. EtherCAT command received
+0x8000 = complete frame missing
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12176</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL6090_01.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12177</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12178</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12179</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12179</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Inputs.Frm0InputToggle</Name>
+					<Comment><![CDATA[0x0001 = Toggle Bit: 1. EtherCAT command received new inputs
+0x0002 = Toggle Bit: 2. EtherCAT command received new inputs
+0x0004 = Toggle Bit: 3. EtherCAT command received new inputs
+...
+0x4000 = Toggle Bit: 15. EtherCAT command received new inputs
+0x8000 = Old frame - not from the actual cycle - received
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12192</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL6090_01.WcState.InputToggle</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12193</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.WcState.InputToggle</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12195</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.WcState.InputToggle</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12195</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.&lt;unreferenced&gt;.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12208</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.RTTask.WcState.WcState</Name>
+					<Comment><![CDATA[0 = Data valid
+1 = Data invalid
+]]></Comment>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>12209</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Inputs.SlaveCount</Name>
+					<Comment><![CDATA[Actual count of EtherCAT slaves received]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12240</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Inputs.DevState</Name>
+					<Comment><![CDATA[0x0001 = Link error
+0x0002 = I/O locked after link error (I/O reset required)
+0x0004 = Link error (redundancy adapter)
+0x0008 = Missing one frame (redundancy mode)
+0x0010 = Out of send resources (I/O reset required)
+0x0020 = Watchdog triggered
+0x0040 = Ethernet driver (miniport) not found
+0x0080 = I/O reset active
+0x0100 = At least one device in 'INIT' state
+0x0200 = At least one device in 'PRE-OP' state
+0x0400 = At least one device in 'SAFE-OP' state
+0x0800 = At least one device indicates an error state
+0x1000 = DC not in sync
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12272</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>InfoData.ChangeCount</Name>
+					<Comment><![CDATA[Info data change counter]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12288</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>InfoData.DevId</Name>
+					<Comment><![CDATA[DeviceId of EtherCAT device]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12304</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>InfoData.AmsNetId</Name>
+					<Comment><![CDATA[AmsNetId of EtherCAT device]]></Comment>
+					<DataType>AMSNETID</DataType>
+					<BitSize>48</BitSize>
+					<BitOffs>12320</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>InfoData.CfgSlaveCount</Name>
+					<Comment><![CDATA[Count of configured EtherCAT slaves]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12368</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = Slave in 'INIT' state
+0x___2 = Slave in 'PREOP' state
+0x___3 = Slave in 'BOOT' state
+0x___4 = Slave in 'SAFEOP' state
+0x___8 = Slave in 'OP' state
+0x001_ = Slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = Slave disabled
+0x010_ = Slave not present
+0x020_ = Slave signals link error
+0x040_ = Slave signals missing link
+0x080_ = Slave signals unexpected link
+0x100_ = Communication port A
+0x200_ = Communication port B
+0x400_ = Communication port C
+0x800_ = Communication port D
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12384</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL1004_01.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = Slave in 'INIT' state
+0x___2 = Slave in 'PREOP' state
+0x___3 = Slave in 'BOOT' state
+0x___4 = Slave in 'SAFEOP' state
+0x___8 = Slave in 'OP' state
+0x001_ = Slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = Slave disabled
+0x010_ = Slave not present
+0x020_ = Slave signals link error
+0x040_ = Slave signals missing link
+0x080_ = Slave signals unexpected link
+0x100_ = Communication port A
+0x200_ = Communication port B
+0x400_ = Communication port C
+0x800_ = Communication port D
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12400</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = Slave in 'INIT' state
+0x___2 = Slave in 'PREOP' state
+0x___3 = Slave in 'BOOT' state
+0x___4 = Slave in 'SAFEOP' state
+0x___8 = Slave in 'OP' state
+0x001_ = Slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = Slave disabled
+0x010_ = Slave not present
+0x020_ = Slave signals link error
+0x040_ = Slave signals missing link
+0x080_ = Slave signals unexpected link
+0x100_ = Communication port A
+0x200_ = Communication port B
+0x400_ = Communication port C
+0x800_ = Communication port D
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12416</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL6090_01.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = Slave in 'INIT' state
+0x___2 = Slave in 'PREOP' state
+0x___3 = Slave in 'BOOT' state
+0x___4 = Slave in 'SAFEOP' state
+0x___8 = Slave in 'OP' state
+0x001_ = Slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = Slave disabled
+0x010_ = Slave not present
+0x020_ = Slave signals link error
+0x040_ = Slave signals missing link
+0x080_ = Slave signals unexpected link
+0x100_ = Communication port A
+0x200_ = Communication port B
+0x400_ = Communication port C
+0x800_ = Communication port D
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12432</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL6090_01.InfoData.AdsAddr</Name>
+					<Comment><![CDATA[Complete ADS address to access the slave (mailbox)]]></Comment>
+					<DataType>AMSADDR</DataType>
+					<BitSize>64</BitSize>
+					<BitOffs>12448</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = Slave in 'INIT' state
+0x___2 = Slave in 'PREOP' state
+0x___3 = Slave in 'BOOT' state
+0x___4 = Slave in 'SAFEOP' state
+0x___8 = Slave in 'OP' state
+0x001_ = Slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = Slave disabled
+0x010_ = Slave not present
+0x020_ = Slave signals link error
+0x040_ = Slave signals missing link
+0x080_ = Slave signals unexpected link
+0x100_ = Communication port A
+0x200_ = Communication port B
+0x400_ = Communication port C
+0x800_ = Communication port D
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12512</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.InfoData.AdsAddr</Name>
+					<Comment><![CDATA[Complete ADS address to access the slave (mailbox)]]></Comment>
+					<DataType>AMSADDR</DataType>
+					<BitSize>64</BitSize>
+					<BitOffs>12528</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.InfoData.DcOutputShift</Name>
+					<DataType>DINT</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>12592</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL3751_01.InfoData.DcInputShift</Name>
+					<DataType>DINT</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>12624</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.&lt;unreferenced&gt;.InfoData.ObjectId</Name>
+					<DataType>OTCID</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>12656</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.&lt;unreferenced&gt;.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = At least one slave in 'INIT' state
+0x___2 = At least one slave in 'PREOP' state
+0x___3 = At least one slave in 'BOOT' state
+0x___4 = At least one slave in 'SAFEOP' state
+0x___8 = At least one slave in 'OP' state
+0x001_ = At least one slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = At least one slave disabled
+0x010_ = At least one slave not present
+0x020_ = At least one slave signals link error
+0x040_ = At least one slave signals missing link
+0x080_ = At least one slave signals unexpected link
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12688</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.&lt;unreferenced&gt;.InfoData.SlaveCount</Name>
+					<Comment><![CDATA[Info data slave counter]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12704</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.RTTask.InfoData.ObjectId</Name>
+					<DataType>OTCID</DataType>
+					<BitSize>32</BitSize>
+					<BitOffs>12720</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.RTTask.InfoData.State</Name>
+					<Comment><![CDATA[0x___1 = At least one slave in 'INIT' state
+0x___2 = At least one slave in 'PREOP' state
+0x___3 = At least one slave in 'BOOT' state
+0x___4 = At least one slave in 'SAFEOP' state
+0x___8 = At least one slave in 'OP' state
+0x001_ = At least one slave signals error
+0x002_ = Invalid vendorId, productCode... read
+0x004_ = Initialization error occurred
+0x008_ = At least one slave disabled
+0x010_ = At least one slave not present
+0x020_ = At least one slave signals link error
+0x040_ = At least one slave signals missing link
+0x080_ = At least one slave signals unexpected link
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12752</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>SyncUnits.&lt;default&gt;.RTTask.InfoData.SlaveCount</Name>
+					<Comment><![CDATA[Info data slave counter]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12768</BitOffs>
+				</Variable>
+			</Inputs>
+			<Outputs>
+				<ByteSize>1536</ByteSize>
+				<Variable>
+					<Name>Main_EL6090_01.DIS Outputs.Value row 1</Name>
+					<DataType>INT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>312</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL6090_01.DIS Outputs.Value row 2</Name>
+					<DataType>INT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>328</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.Channel 1.Output</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>440</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.Channel 2.Output</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>441</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.Channel 3.Output</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>442</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Main_EL2004_01.Channel 4.Output</Name>
+					<DataType>BIT</DataType>
+					<BitSize>1</BitSize>
+					<BitOffs>443</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Outputs.Frm0Ctrl</Name>
+					<Comment><![CDATA[0x0001 = prevent 1. EtherCAT command from sending (request NOP)
+0x0002 = prevent 2. EtherCAT command from sending (request NOP)
+0x0004 = prevent 3. EtherCAT command from sending (request NOP)
+...
+0x4000 = prevent 15. EtherCAT command from sending (request NOP)
+0x8000 = prevent complete frame from sending
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12160</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Outputs.Frm0WcCtrl</Name>
+					<Comment><![CDATA[0x0001 = copy data with wrong working counter of 1. EtherCAT command
+0x0002 = copy data with wrong working counter of 2. EtherCAT command
+0x0004 = copy data with wrong working counter of 3. EtherCAT command
+...
+0x4000 = copy data with wrong working counter of 15. EtherCAT command
+]]></Comment>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12176</BitOffs>
+				</Variable>
+				<Variable>
+					<Name>Outputs.DevCtrl</Name>
+					<DataType>UINT</DataType>
+					<BitSize>16</BitSize>
+					<BitOffs>12272</BitOffs>
+				</Variable>
+			</Outputs>
+		</ProcessImage>
+	</Config>
+</EtherCATConfig>
