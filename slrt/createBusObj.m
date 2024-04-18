@@ -43,6 +43,7 @@ ctrlStruct.counterCtrl = uint8(0);
 ctrlStruct.counterVal = uint32(0);
 
 ctrlStruct.current_A = 0.0; % might change to vel ctrl?
+ctrlStruct.forceSetpoint_N = 0.0;
 
 ctrlBusInfo = Simulink.Bus.createObject(ctrlStruct);
 ctrlBus = evalin('base',ctrlBusInfo.busName);

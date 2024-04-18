@@ -28,6 +28,8 @@ slCacheDir = 'c:\simulink\cache2022b'; % cache directory
 lb2N = 4.44822;
 lodCellMaxLb = 100;
 
+peakCurrent = 3; % peak current set on LinMot drive
+
 loadCellMaxN = lodCellMaxLb * lb2N; 
 
 loadCellCal = 2.1887; % mV/V
@@ -36,14 +38,23 @@ el3751PhysicalRange = 32; % mV/V
 el3751DigitalRange = double(0x773594); % corresponds to 32 mV/V
 el3751Scale = el3751DigitalRange / el3751PhysicalRange; % reading per mV/V
 
-loadCellScale = loadCellMaxN/(el3751Scale*loadCellCal); % from digital reading to N
+loadCellScale = -loadCellMaxN/(el3751Scale*loadCellCal); % from digital reading to N; invert signal direction here
+forceZeroOfst = -3.5; % offset force at zero load
 
 el5101SetCounterCmd = uint8(0x4);       % bit 2 rising edge sets counter
 el5101CounterInitVal = uint32(2^31);    % set counter mid-way; for realistic motions, this will not overflow
 
 encoderPosGain = 10e-6/4/64; % resolution of 10um, factor 4 for quad decoding; factor 64 - check SDOs?
 
-ctrlSignalScale = 10/3; % 3A -> 10V;
+ctrlSignalScale = 10/peakCurrent; % peak current (A) -> 10V;
+
+posPGainInit = 0.75; % A/mm error
+posIGainInit = 0;
+
+forcePGainInit = 0.85; % A/N error
+dampingInit = 10;       % Ns/m
+springInit = 150;       % N/m
+
 % =========================================================================
 
 %% === Setup SDI ==========================================================
