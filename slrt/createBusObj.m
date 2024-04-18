@@ -22,6 +22,7 @@ actuatorStatusStruct.homed = logical(false);
 actuatorStatusStruct.warning = logical(false);
 actuatorStatusStruct.error = logical(false);
 
+actuatorStatusStruct.rawCounter = uint32(0); % raw encoder counter value
 actuatorStatusStruct.position_m = 0.0;
 actuatorStatusStruct.velocity_m_s = 0.0;
 actuatorStatusStruct.force_N = 0.0;
@@ -38,6 +39,8 @@ ctrlStruct.switchOn = logical(false);
 ctrlStruct.home = logical(false);
 ctrlStruct.specialMode = logical(false);
 ctrlStruct.acknError = logical(false);
+ctrlStruct.counterCtrl = uint8(0);
+ctrlStruct.counterVal = uint32(0);
 
 ctrlStruct.current_A = 0.0; % might change to vel ctrl?
 

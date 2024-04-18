@@ -20,8 +20,10 @@ appDecimation = 200; % decimation of app (200 = 5Hz at 1kHz Fs)
 appDecimationReduced = 1000;
 appDecimationAxes = 100;
 
-slBuildDir = 'c:\simulink\build2024a'; % built directory; this is where the App gets the RT excecutable from
-slCacheDir = 'c:\simulink\cache2024a'; % cache directory
+axesDt = 20;
+
+slBuildDir = 'c:\simulink\build2022b'; % built directory; this is where the App gets the RT excecutable from
+slCacheDir = 'c:\simulink\cache2022b'; % cache directory
 
 lb2N = 4.44822;
 lodCellMaxLb = 100;
@@ -35,6 +37,13 @@ el3751DigitalRange = double(0x773594); % corresponds to 32 mV/V
 el3751Scale = el3751DigitalRange / el3751PhysicalRange; % reading per mV/V
 
 loadCellScale = loadCellMaxN/(el3751Scale*loadCellCal); % from digital reading to N
+
+el5101SetCounterCmd = uint8(0x4);       % bit 2 rising edge sets counter
+el5101CounterInitVal = uint32(2^31);    % set counter mid-way; for realistic motions, this will not overflow
+
+encoderPosGain = 10e-6/4/64; % resolution of 10um, factor 4 for quad decoding; factor 64 - check SDOs?
+
+ctrlSignalScale = 10/3; % 3A -> 10V;
 % =========================================================================
 
 %% === Setup SDI ==========================================================
