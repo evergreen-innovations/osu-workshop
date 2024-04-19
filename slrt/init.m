@@ -20,7 +20,7 @@ appDecimation = 200; % decimation of app (200 = 5Hz at 1kHz Fs)
 appDecimationReduced = 1000;
 appDecimationAxes = 100;
 
-axesDt = 20;
+axesDt = 10;
 
 slBuildDir = 'c:\simulink\build2022b'; % built directory; this is where the App gets the RT excecutable from
 slCacheDir = 'c:\simulink\cache2022b'; % cache directory
@@ -54,6 +54,8 @@ posIGainInit = 0;
 forcePGainInit = 0.85; % A/N error
 dampingInit = 10;       % Ns/m
 springInit = 150;       % N/m
+
+RampTime = 3;
 
 % =========================================================================
 
