@@ -7,7 +7,13 @@ clearvars; close all; clc;
 createBusObj;
 createDefinitions;
 
-Ts = 1/1000;    % SLRT loop rate
+Ts = 1/1000;        % SLRT loop rate
+
+ctrlTs = 1/1000;     % rate for controller
+
+if ctrlTs < Ts
+    error('Ctrl time step cannot be smaller than global Ts')
+end
 
 tgName = 'EGIBaseline1';
 
@@ -38,7 +44,7 @@ el3751PhysicalRange = 32; % mV/V
 el3751DigitalRange = double(0x773594); % corresponds to 32 mV/V
 el3751Scale = el3751DigitalRange / el3751PhysicalRange; % reading per mV/V
 
-loadCellScale = -loadCellMaxN/(el3751Scale*loadCellCal); % from digital reading to N; invert signal direction here
+loadCellScale = -loadCellMaxN/(el3751Scale*loadCellCal); % from digital reading to N; 
 forceZeroOfst = -3.5; % offset force at zero load
 
 el5101SetCounterCmd = uint8(0x4);       % bit 2 rising edge sets counter
@@ -48,12 +54,12 @@ encoderPosGain = 10e-6/4/64; % resolution of 10um, factor 4 for quad decoding; f
 
 ctrlSignalScale = 10/peakCurrent; % peak current (A) -> 10V;
 
-posPGainInit = 0.75; % A/mm error
+posPGainInit = 0.5; % A/mm error
 posIGainInit = 0;
 
-forcePGainInit = 0.85; % A/N error
-dampingInit = 10;       % Ns/m
-springInit = 150;       % N/m
+forcePGainInit = 0.5; % A/N error
+dampingInit = 5;       % Ns/m
+springInit = 100;       % N/m
 
 RampTime = 3;
 
